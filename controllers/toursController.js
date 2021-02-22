@@ -9,7 +9,6 @@ const factory = require('./handlerFactory');
 
 // Mainly for inMemory storage
 const multerStorage = multer.memoryStorage();
-
 const multerFilter = (req, file, cb) => {
   if (file.mimetype.startsWith('image')) {
     cb(null, true);
