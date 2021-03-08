@@ -7,6 +7,7 @@ const hpp = require('hpp');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -75,6 +76,9 @@ app.use(helmet());
 //     },
 //   })
 // );
+
+// Test response compresser
+app.use(compression());
 
 // Development logging
 if (process.env.NODE_ENV === 'development') {
