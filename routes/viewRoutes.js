@@ -10,7 +10,7 @@ const {
   getMyTours,
 } = require('../controllers/viewsController');
 const { isLoggedIn, protect } = require('../controllers/authController');
-const { createBookingCheckout } = require('../controllers/bookingController');
+// const { createBookingCheckout } = require('../controllers/bookingController');
 
 const router = express.Router();
 
