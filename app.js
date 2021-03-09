@@ -19,6 +19,10 @@ const viewRouter = require('./routes/viewRoutes');
 
 const app = express();
 
+// trust proxy is tied to req.headers['x-forward-proto'] === 'https'
+// authController createSendToken()
+app.enable('trust proxy');
+
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 

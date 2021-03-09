@@ -15,6 +15,7 @@ const DB = process.env.DATABASE.replace(
   '<PASSWORD>',
   process.env.DATABASE_PASSWORD
 );
+
 mongoose
   .connect(DB, {
     useNewUrlParser: true,
@@ -34,5 +35,12 @@ process.on('unhandledRejection', (error) => {
   console.log(error.name, error.message);
   server.close(() => {
     process.exit(1);
+  });
+});
+
+process.on('SIGTERM', () => {
+  console.log('SIGTERM RECEIVED. Shutting down gracefully...');
+  server.close(() => {
+    console.log('Process terminated');
   });
 });
