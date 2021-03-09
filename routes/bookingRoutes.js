@@ -8,7 +8,7 @@ const {
   deleteBooking,
 } = require('../controllers/bookingController');
 const { protect, restrictTo } = require('../controllers/authController');
-const { alerts } = require('../controllers/viewController');
+const { alerts } = require('../controllers/viewsController');
 
 const router = express.Router();
 // Middleware for all request
